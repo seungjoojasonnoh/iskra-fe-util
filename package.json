@@ -1,0 +1,34 @@
+{
+  "name": "@iskra/fe-util",
+  "version": "1.0.0",
+  "main": "./lib/bundle.js",
+  "type": "module",
+  "types": "lib/index.d.ts",
+  "license": "MIT",
+  "scripts": {
+    "build": "rollup -c",
+    "watch": "rollup -wc"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.2",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-flow": "^7.18.6",
+    "@babel/preset-typescript": "^7.18.6",
+    "@rollup/plugin-babel": "^6.0.2",
+    "@rollup/plugin-commonjs": "^23.0.2",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-typescript": "^9.0.2",
+    "@types/big.js": "^6.1.6",
+    "@types/jest": "^29.2.2",
+    "@types/node": "^18.11.9",
+    "rollup": "^3.2.5",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-typescript2": "^0.32.1",
+    "tslib": "^2.4.1",
+    "typescript": "^4.8.4"
+  },
+  "dependencies": {
+    "big.js": "^6.2.1",
+    "dayjs": "^1.11.7"
+  }
+}
