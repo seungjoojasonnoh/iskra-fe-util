@@ -1,4 +1,4 @@
-import { StaticChainInfo } from './model';
+import { StaticChainInfo, StaticTokenInfo } from './model';
 
 export const DEFAULT_DECIMAL_PLACE = 4;
 
@@ -6,6 +6,51 @@ export const ERROR_MESSAGE = {
   NUMBER_UTILITY: {
     EXCEEDS_RANGE: 'Exceeds number range',
     INVALID: 'Invalid number type',
+  },
+};
+
+export const TokenConstant: Record<string, StaticTokenInfo> = {
+  ISK: {
+    decimal: 18,
+    description: 'Native Token of ISKRA',
+    name: 'ISK',
+    symbol: ['ISK', 'isk', 'Isk'],
+    explaination: 'ISKRA TOKEN',
+  },
+  KLAY: {
+    decimal: 18,
+    description: 'Native Token of Klaytn',
+    name: 'KLAY',
+    symbol: ['KLAY', 'Klay', 'klay'],
+    explaination: 'Klaytn',
+  },
+  ETH: {
+    decimal: 18,
+    description: 'Native Token of Ethereum',
+    name: 'ETH',
+    symbol: ['ETH', 'Eth', 'eth'],
+    explaination: 'Ethereum',
+  },
+  USDT: {
+    decimal: 6,
+    description: 'Native Token of Klaytn',
+    name: 'USDT',
+    symbol: ['USDT', 'usdt'],
+    explaination: 'Tether USD',
+  },
+  IUSDT: {
+    decimal: 6,
+    description: 'Stablecoin pegged to the USD',
+    name: 'iUSDT',
+    symbol: ['iUSDT', 'IUSDT', 'iusdt'],
+    explaination: 'Tether USD (Iskra bridge)',
+  },
+  OUSDT: {
+    decimal: 6,
+    description: 'Stablecoin pegged to the USD',
+    name: 'oUSDT',
+    symbol: ['oUSDT', 'OUSDT', 'ousdt'],
+    explaination: 'Orbit Bridge Klaytn USD Tether',
   },
 };
 
@@ -21,7 +66,7 @@ export const ChainConstant: Record<number, StaticChainInfo> = {
   },
   8217: {
     id: 8217,
-    name: 'klaytn',
+    name: 'cypress',
     baseCoinSymbol: 'KLAY',
     displayName: 'Mainnet (Klaytn)',
     backgroundColor: '#FF2899',

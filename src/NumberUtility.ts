@@ -24,11 +24,12 @@ export const NumberUtility = {
         return ERROR_MESSAGE.NUMBER_UTILITY.EXCEEDS_RANGE;
       }
 
-      if (biggedValue.gt(new Big(0)) && biggedValue.lt(new Big(0.000001))) {
-        return biggedValue.round(6, 1).toString();
-      } else {
-        return format(biggedValue);
-      }
+      return commonRule(biggedValue);
+      // if (biggedValue.gt(new Big(0)) && biggedValue.lt(new Big(0.000001))) {
+      //   return biggedValue.round(6, 1).toString();
+      // } else {
+      //   return format(biggedValue);
+      // }
     } catch (err) {
       console.log(err);
       return ERROR_MESSAGE.NUMBER_UTILITY.INVALID;
@@ -46,11 +47,12 @@ export const NumberUtility = {
         return ERROR_MESSAGE.NUMBER_UTILITY.EXCEEDS_RANGE;
       }
 
-      if (biggedValue.gt(new Big(0)) && biggedValue.lt(new Big(0.000001))) {
-        return biggedValue.round(decimalPlace, round).toString();
-      } else {
-        return format(biggedValue);
-      }
+      return commonRule(biggedValue, decimalPlace, round);
+      // if (biggedValue.gt(new Big(0)) && biggedValue.lt(new Big(0.000001))) {
+      //   return biggedValue.round(decimalPlace, round).toString();
+      // } else {
+      //   return format(biggedValue);
+      // }
     } catch (err) {
       console.log(err);
       return ERROR_MESSAGE.NUMBER_UTILITY.INVALID;
@@ -58,8 +60,12 @@ export const NumberUtility = {
   },
 };
 
-function isWithinRange(biggedValue: Big) {
-  return biggedValue.gt(RANGE_LIMIT);
+function commonRule(biggedValue: Big, decimalPlace = 6, round = 1) {
+  if (biggedValue.gt(new Big(0)) && biggedValue.lt(new Big(0.000001))) {
+    return biggedValue.round(decimalPlace, round).toString();
+  } else {
+    return format(biggedValue);
+  }
 }
 
 function format(biggedValue: Big) {

@@ -7,3 +7,11 @@ export interface StaticChainInfo {
   scopeUrl: string;
   txScopeUrl: string;
 }
+
+export interface StaticTokenInfo {
+  name: string;
+  explaination: string;
+  symbol: string[];
+  decimal: number;
+  description: string;
+}
